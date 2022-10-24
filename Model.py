@@ -1,4 +1,3 @@
-
 phonebook = []
 
-path = 'phone.txt'
+path = 'phone.cvs'

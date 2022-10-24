@@ -2,17 +2,17 @@
 import Model
 
 def export_data():
-    with open(Model.path, 'r') as data:
-        contacts = []
+    with open(Model.path, 'r') as file:
+        data = []
         t = []
-        for line in contacts:
+        for line in file:
             if ';' in line:
                 temp = line.strip().split(';')
-                contacts.append(temp)    
+                data.append(temp)    
             elif line != '':
                 if line != '\n':
                     t.append(line.strip())
                 else:
-                    contacts.append(t)
+                    data.append(t)
                     t= []
-    return contacts
+    return data

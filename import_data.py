@@ -1,12 +1,12 @@
 # модуль 
 import Model
 
-def import_data(contacts, sep=None):
-    with open(Model.path, 'w') as data:
+def import_data(data, sep=None):
+    with open(Model.path, 'w') as file:
         if sep == None:
-            for i in contacts:
-                data.write(f"{i}\n")
-            data.write(f"\n")
+            for i in data:
+                file.write(f"{i}\n")
+            file.write(f"\n")
         else:
-            data.write(sep.join(data))
-            data.write(f"\n")
+            file.write(sep.join(data))
+            file.write(f"\n")

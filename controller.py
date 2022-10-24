@@ -12,35 +12,30 @@ def greeting():
 def input_data():
     last_name = input("Введите фамилию: ")
     first_name = input("Введите имя: ")
-    father_name = input("Введите отчество: ")
+    father_name = input("Введите отчетство: ")
     phone_number = input("Введите телефон: ")
     note = input("Введите примечание: ")
     return [last_name, first_name, father_name, phone_number, note]
 
-sep = ";"
+sep = ';'
 
 def choice_todo():
     print("Что делаем:\n\
     1 - импорт;\n\
     2 - экспорт;\n\
-    3 - удаление контакта;\n\
-    4 - изменение контакта;\n\
+    3 - изменение контакта;\n\
+    4 - удаление контакта;\n\
     5 - поиск контакта.")
     ch = input("Введите цифру: ")
     if ch == '1':
         import_data(input_data(), sep)
     elif ch == '2':
-        contacts = export_data()
-        print_data(contacts)
-    elif ch == '3':
-        contacts = remove_contact()
-        print('\nКонтакт удален\n')
-    elif ch == '4':
-        contacts = change_contact()
+        data = export_data()
+        print_data(data)
     else:
         word = input("Введите данные для поиска: ")
-        contacts = export_data()
-        item = search_data(word, contacts)
+        data = export_data()
+        item = search_data(word, data)
         if item != None:
             print("Фамилия".center(20), "Имя".center(20), "Отчество".center(20), "Телефон".center(15), "Примечание".center(30))
             print("-"*105)
