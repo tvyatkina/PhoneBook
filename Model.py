@@ -1,0 +1,4 @@
+
+phonebook = []
+
+path = 'phone.txt'
